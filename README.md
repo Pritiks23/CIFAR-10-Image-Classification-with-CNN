@@ -24,7 +24,7 @@ Training setup:
 
 The model was evaluated on the test set and visualized on random test samples. I also tested interactive uploads in Colab, resizing custom images to 32x32 and running predictions. A confusion matrix was generated to analyze misclassifications (e.g., cars vs trucks, cats vs dogs).  
 
-The model was saved in both `.h5` (legacy) and `.keras` (recommended) formats for reloading later.  
+The model was saved in both `.h5` (legacy) and `.keras`  formats for reloading later.  
 
 ---
 
