@@ -31,8 +31,11 @@ The model was saved in both `.h5` (legacy) and `.keras`  formats for reloading l
 ## Key Takeaways  
 
 - CNNs are a strong baseline for image classification — even a simple one works decently on CIFAR-10  
-- Preprocessing (normalizing inputs) is critical  
-- Callbacks (EarlyStopping + ModelCheckpoint) make training more efficient and safer  
-- Visualization (plots + confusion matrix) highlights where the model struggles  
-- The modern way to save models is with `.keras` format instead of `.h5`  
+- **Preprocessing is critical**: Scaling pixel values to `[0,1]` made training converge much faster and prevented unstable gradients. Even a simple normalization step significantly impacted performance.  
+
+- **Callbacks improve training quality**: EarlyStopping prevented wasted computation when validation accuracy plateaued, and ModelCheckpoint ensured I always had the best version of the model saved. Together, they made the training process more efficient and reliable.  
+
+- **Visualization provides insight beyond accuracy**: Looking only at accuracy hides a lot of detail. Plotting sample predictions gave me intuition for where the model works well, while the confusion matrix revealed systematic weaknesses (like confusing similar classes). This step turned raw numbers into actionable understanding.  
+
+- **Saving models in `.keras` format is the modern standard**: While `.h5` still works, the new `.keras` format captures extra metadata and is better supported moving forward. It’s the recommended way to save and reload models for long-term use.  
 - Colab makes it easy to train, test, and deploy small demos without worrying about environment setup  
